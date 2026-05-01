@@ -1,0 +1,1 @@
+Starting with Infra as a code, this project servers as a learning excercise for reader who wants to utilize ansible playbooks to create/destroy infra on cloud
