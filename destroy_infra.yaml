@@ -1,0 +1,21 @@
+- name: destroy ec2 instance
+  hosts: localhost
+  connection: local
+  collections:
+    - amazon.aws
+  
+  vars:
+    region: ap-south-1
+    instance_name: demo-ec2
+
+  tasks:
+    - name: terminate ec2 instance
+      amazon.aws.ec2_instance:
+        name: "{{ instance_name }}"
+        region: "{{ region }}"
+        state: absent
+      register: ec2_output
+    
+    - name: display termination status
+      debug:
+        var: ec2_output

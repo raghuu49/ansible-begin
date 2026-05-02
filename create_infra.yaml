@@ -1,0 +1,25 @@
+- name: create ec2 instance
+  hosts: localhost
+  connection: local
+  collections:
+    - amazon.aws
+  
+  vars:
+    region: ap-south-1
+    instance_name: demo-ec2
+  
+  tasks:
+    - name: launch ec2 instance
+      amazon.aws.ec2_instance:
+        name: "{{ instance_name }}"
+        key_name: ansible-key
+        instance_type: t3.micro
+        image_id: ami-0f58b397bc5c1f2e8
+        region: "{{ region }}"
+        wait: true
+        state: present
+      register: ec2_output
+   
+    - name: display ec2 instance details
+      debug:
+        var: ec2_output

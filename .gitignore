@@ -1,0 +1,59 @@
+# AWS Credentials and Config
+~/.aws/
+.aws/
+credentials
+.env
+
+# SSH Keys
+*.pem
+*.key
+ansible-key*
+ssh_key*
+id_rsa*
+
+# Python Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.egg
+
+# Ansible
+*.retry
+.ansible/
+roles/*/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+Thumbs.db
+.DS_Store
+.directory
+
+# Logs
+*.log
+logs/
+
+# Temporary Files
+*.tmp
+temp/
+tmp/
+
+# Secrets
+secrets.yml
+vars/secrets.yml
+.vault-pass
